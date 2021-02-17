@@ -1,0 +1,50 @@
+#!/usr/bin/env sh
+
+# Démarre le démon gérant les raccourcis clavier (-m 1 permet de gérer correctement la disposition du clavier)
+sxhkd -m 1 &
+
+# Démarre Polybar
+polybar top &
+
+# Démarre le compositeur, permettant de bénéficier de la transparence sur certaines applications
+picom --daemon
+
+# Applique le fond d'écran
+feh --no-fehbg --bg-fill $HOME/.local/share/wallpapers/wallpapertip_misty-forest-wallpaper_252283.jpg &
+
+# Par défaut le curseur utilisé par X.org est la croix, cette commande permet d'utiliser la flèche gauche
+xsetroot -cursor_name left_ptr
+
+# Permet d'afficher correctement le contenu des fenêtres des applications Java (IntelliJ IDEA par exemple)
+# https://wiki.archlinux.org/index.php/Bspwm#Problems_with_Java_applications
+wmname LG3D
+
+# Créé 10 bureaux, nommés de I à X
+bspc monitor --reset-desktops I II III IV V VI VII VIII IX X
+
+# Configure la largeur des bordures des fenêtres des applications à 1 pixel
+bspc config border_width 1
+
+# Les couleurs sont les mêmes que Polybar (border et focused)
+bspc config normal_border_color '#4C566A'
+bspc config focused_border_color '#88C0D0'
+
+# Configure l'écart entre deux fenêtre à 5 pixels
+bspc config window_gap 5
+
+# Utilise le mode monocle si il y a une seule fenêtre
+bspc config single_monocle true
+
+# Supprime les bordures en mode monocle
+bspc config borderless_monocle true
+
+# Permet d'afficher mpv en mode flottant
+bspc rule --add mpv state=floating
+
+# Permet d'ouvrir les applications sur leur bureau attitré en leur donnant le focus (follow)
+bspc rule --add firefox desktop=^1 follow=on
+bspc rule --add jetbrains-goland desktop=^3 follow=on
+bspc rule --add Thunderbird desktop=^4 follow=on
+# La règle pour Spotify ne fonctionne pas, l'application ne renseignant pas la classe au démarrage mais plus tard
+#bspc rule --add spotify desktop=^5 follow=on
+
