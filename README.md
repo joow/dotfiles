@@ -21,7 +21,7 @@
 ## Setup a new target
 
 ```shell
-git clone https://github.com/joow/dotfiles.git
+chezmoi init https://github.com/joow/dotfiles.git
 vim ~/.config/chezmoi/chezmoi.toml
 # see below to fill data
 chmod 0600 ~/.config/chezmoi/chezmoi.toml
