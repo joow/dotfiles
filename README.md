@@ -24,7 +24,6 @@
 chezmoi init https://github.com/joow/dotfiles.git
 vim ~/.config/chezmoi/chezmoi.toml
 # see below to fill data
-chmod 0600 ~/.config/chezmoi/chezmoi.toml
 chezmoi apply --verbose --dry-run
 chezmoi apply
 ```
