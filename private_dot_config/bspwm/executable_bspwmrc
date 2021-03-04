@@ -7,7 +7,7 @@ sxhkd -m 1 &
 polybar top &
 
 # Démarre le compositeur, permettant de bénéficier de la transparence sur certaines applications
-picom --daemon
+picom --daemon --backend glx
 
 # Applique le fond d'écran
 feh --no-fehbg --bg-fill $HOME/.local/share/wallpapers/wallpapertip_misty-forest-wallpaper_252283.jpg &
