@@ -18,6 +18,14 @@
 | xsetroot  | X11 utility                    | https://www.x.org/archive/X11R7.5/doc/man/man1/xsetroot.1.html |
 | wmname    | wm name property getter/setter | https://tools.suckless.org/x/wmname/                           |
 
+The followings fonts are used and thus needs to be installed :
+    - [Iosevka SS05](https://typeof.net/Iosevka/)
+    - [Iosevka Term SS05](https://typeof.net/Iosevka/)
+    - [Font Awesome 5](https://fontawesome.com/)
+    - [font-logos](https://lukas-w.github.io/font-logos/)
+    - [Lato](https://www.latofonts.com/lato-free-fonts/)
+    - [Inter](https://rsms.me/inter/)
+
 ## Setup a new target
 
 ```sh
