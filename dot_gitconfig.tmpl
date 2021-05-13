@@ -9,6 +9,9 @@
 	lola = log --graph --decorate --pretty=format:'%C(blue)[%ad %an] %C(yellow)%h%d%Creset %s' --date=short --all
 [pull]
 	ff = only
+[fetch]
+    prune = true
+    pruneTags = true
 {{- if $gpgKey }}
 [commit]
 	gpgSign = true
